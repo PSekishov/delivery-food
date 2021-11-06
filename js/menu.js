@@ -14,6 +14,14 @@ const renderItems = (data) => {
 
         console.log(product);
 
+        for(item in product){
+            // console.log(item);
+            // if(item === 'name'){
+                console.log(product[item]);
+            // } 
+        }
+
+
     });
 };
 

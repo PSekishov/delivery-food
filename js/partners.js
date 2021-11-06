@@ -14,9 +14,14 @@ const renderItems = (data) => {
        
         console.log(restoran);
 
-    });
+        for(item in restoran){
+            // console.log(item);
+            // if(item === 'products'){
+                console.log(restoran[item]);
+            // } 
+        }
 
-      
+    });    
 
 };
 
@@ -27,5 +32,14 @@ fetch('https://restorans-97e29-default-rtdb.firebaseio.com/db/partners.json')
     })
     .catch((error) => {
         console.log(error)
-    });    
+    });
+
+// fetch('https://restorans-97e29-default-rtdb.firebaseio.com/db/partners.json')
+//     .then((response) => response.json())
+//     .then((data) => {
+//         renderItems(data);
+//     })
+//     .catch((error) => {
+//         console.log(error)
+//     });    
    
