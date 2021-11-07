@@ -42,7 +42,7 @@ const renderItems = (data) => {
                    
             } else {
                 localStorage.setItem('restaurant', JSON.stringify(item));
-                window.location.href = '/restaurant.html';
+                window.location.href = 'https://psekishov.github.io/delivery-food//restaurant.html';
             }                  
             
         });
