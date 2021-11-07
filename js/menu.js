@@ -65,7 +65,7 @@ if(localStorage.getItem('restaurant')){
             console.log(error)
         });
 } else {
-    window.location.href = 'https://psekishov.github.io/delivery-food/index.html';
+    window.location.href = '/';
 }
 
 

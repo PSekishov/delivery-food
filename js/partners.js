@@ -30,21 +30,21 @@ const renderItems = (data) => {
             </div>
         `;
 
+    
+      
         a.addEventListener('click', (e) => {
             e.preventDefault();
             // console.log(a)
 
-            if(!localStorage.getItem('user')){
-                modalAuth.style.display = 'flex';
-                login();
-                buttonAuth.style.display = 'none';
-                buttonOut.style.display = 'none';
-                userName.style.display = 'none';
-            }
-            
-            localStorage.setItem('restaurant', JSON.stringify(item));
+            if(!localStorage.getItem('user') || localStorage.getItem('user') === ''){
 
-            window.location.href = 'https://psekishov.github.io/delivery-food/restaurant.html';
+                swal("Вы не залогинены!", "", "warning");
+                   
+            } else {
+                localStorage.setItem('restaurant', JSON.stringify(item));
+                window.location.href = '/restaurant.html';
+            }                  
+            
         });
 
         cardsRestaurants.append(a);
