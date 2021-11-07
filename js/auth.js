@@ -32,6 +32,7 @@ const logout = () => {
     userName.textContent = '';
 
     localStorage.removeItem('user');
+    window.location.href = '/';
 };
 
 

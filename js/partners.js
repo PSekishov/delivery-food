@@ -1,26 +1,50 @@
+const cardsRestaurants = document.querySelector('.cards-restaurants');
+
+
 const renderItems = (data) => {
   
     data.forEach((item) =>{
+    
+        const {image, name, price, products, kitchen, stars, time_of_delivery} = item;
 
-        const restoran = {
-            image: item.image,
-            kitchen: item.kitchen, 
-            name: item.name,
-            price: item.price,
-            products: item.products,
-            stars: item. stars,
-            time_of_delivery: item.time_of_delivery,
-        };
-       
-        console.log(restoran);
+        const a = document.createElement('a');
+        a.setAttribute('href', '/restaurant.html');
+        a.classList.add('card');
+        a.classList.add('card-restaurant');
+        a.dataset.products = products;
 
-        for(item in restoran){
-            // console.log(item);
-            // if(item === 'products'){
-                console.log(restoran[item]);
-            // } 
-        }
+        a.innerHTML = `
+            <img src="${image}" alt="${name}" class="card-image" />
+            <div class="card-text">
+                <div class="card-heading">
+                    <h3 class="card-title">${name}</h3>
+                    <span class="card-tag tag">${time_of_delivery} мин</span>
+                </div>
+                <div class="card-info">
+                    <div class="rating">
+                        ${stars}
+                    </div>
+                    <div class="price">От ${price} ₽</div>
+                    <div class="category">${kitchen}</div>
+                </div>
+            </div>
+        `;
 
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            // console.log(a)
+
+            if(!localStorage.getItem('user')){
+                modalAuth.style.display = 'flex';
+                login();           
+            }
+            
+            localStorage.setItem('restaurant', JSON.stringify(item));
+
+            window.location.href = '/restaurant.html';
+        });
+
+        cardsRestaurants.append(a);
     });    
 
 };
@@ -34,12 +58,5 @@ fetch('https://restorans-97e29-default-rtdb.firebaseio.com/db/partners.json')
         console.log(error)
     });
 
-// fetch('https://restorans-97e29-default-rtdb.firebaseio.com/db/partners.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//         renderItems(data);
-//     })
-//     .catch((error) => {
-//         console.log(error)
-//     });    
+
    
