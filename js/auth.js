@@ -32,7 +32,7 @@ const logout = () => {
     userName.textContent = '';
 
     localStorage.removeItem('user');
-    window.location.href = '/';
+    window.location.href = ''https://psekishov.github.io/delivery-food/index.html';
 };
 
 
