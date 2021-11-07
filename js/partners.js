@@ -36,7 +36,10 @@ const renderItems = (data) => {
 
             if(!localStorage.getItem('user')){
                 modalAuth.style.display = 'flex';
-                login();           
+                login();
+                buttonAuth.style.display = 'none';
+                buttonOut.style.display = 'none';
+                userName.style.display = 'none';
             }
             
             localStorage.setItem('restaurant', JSON.stringify(item));
