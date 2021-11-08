@@ -37,7 +37,7 @@ const auth = () => {
         userName.textContent = '';
 
         localStorage.removeItem('user');
-        window.location.href = '/https://psekishov.github.io/delivery-food/index.html';
+        window.location.href = 'https://psekishov.github.io/delivery-food/index.html';
     };
 
 
