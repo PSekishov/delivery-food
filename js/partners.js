@@ -9,7 +9,7 @@ const partners = () => {
             const {image, name, price, products, kitchen, stars, time_of_delivery} = item;
 
             const a = document.createElement('a');
-            a.setAttribute('href', '/restaurant.html');
+            a.setAttribute('href', 'https://psekishov.github.io/delivery-food/restaurant.html');
             a.classList.add('card');
             a.classList.add('card-restaurant');
             a.dataset.products = products;
@@ -43,7 +43,7 @@ const partners = () => {
                     
                 } else {
                     localStorage.setItem('restaurant', JSON.stringify(item));
-                    window.location.href = '/restaurant.html';
+                    window.location.href = 'https://psekishov.github.io/delivery-food/restaurant.html';
                 } 
             });
 
